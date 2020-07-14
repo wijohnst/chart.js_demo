@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.0.0-alpha/Chart.min.js"></script>
+  <title>Chart.js Demo</title>
+</head>
+<body>
+  <div class="container">
+    <canvas id="demoChart"> <!--HTML5 Canvas-->
+
+    </canvas>
+  </div>
+  <script>
+    let demoChart = document.getElementById('demoChart').getContext('2d'); //HTML5 
+    let demoQuarterlySpendChart = new Chart(demoChart,{
+      type: 'bar', //available chart types: bar, horizontal bar, pie, line, doughnut, radar, polarArea
+      data: {
+        labels: ['Q1', 'Q2', 'Q3', 'Q4'], //X-Axis Label
+        datasets: [{
+          label: 'Dollars Spent',
+          data: [
+            500,
+            700,
+            1000,
+            500
+          ]
+        }]
+      },
+    })
+  </script>
+</body>
+</html>
